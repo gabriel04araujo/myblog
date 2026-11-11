@@ -1,0 +1,628 @@
+
+/* =========================================
+   1. GLOBAL VARIABLES
+========================================= */
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0b110e;
+  --surface: #151e19;
+  --line: #304137;
+
+  --text: #f1f5f0;
+  --muted: #a4b5aa;
+
+  --accent: #a3e6b1;
+  --max-width: 1080px;
+}
+
+
+/* =========================================
+   2. RESET & BASE STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   3. LAYOUT & CONTAINERS
+========================================= */
+
+.container {
+  width: min(100% - 40px, var(--max-width));
+  margin-inline: auto;
+}
+
+
+/* =========================================
+   4. HEADER & NAVIGATION
+========================================= */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 2;
+}
+
+.header-inner {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -.05em;
+}
+
+.logo-dot,
+.logo > span:last-child {
+  color: var(--accent);
+}
+
+.logo > span:last-child {
+  font-size: .85rem;
+  margin-left: .3rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav a {
+  color: var(--muted);
+  font-size: .9rem;
+  transition: color .2s;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--text);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 11px;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 565px;
+  padding-block: 125px 115px;
+  isolation: isolate;
+}
+
+.eyebrow,
+.section-label,
+.post-tag {
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .14em;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-light {
+  width: 7px;
+  height: 7px;
+  background: #9ee0c3;
+  border-radius: 50%;
+  box-shadow: 0 0 14px #9ee0c3;
+}
+
+h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 23px 0 23px;
+  font-size: clamp(3.1rem, 7vw, 5.7rem);
+  line-height: 1.09;
+  letter-spacing: -.065em;
+}
+
+h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.wave {
+  color: var(--accent);
+}
+
+.hero-description {
+  position: relative;
+  z-index: 1;
+  max-width: 530px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+
+/* =========================================
+   6. BUTTONS & LINKS
+========================================= */
+
+.primary-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #0b110e;
+  font-weight: 700;
+  transition: transform .2s, background .2s;
+}
+
+.primary-link:hover {
+  background: #c4f5cf;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   7. SPACE DECORATIONS
+========================================= */
+
+.orbit {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(163, 230, 177, .15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.planet {
+  position: absolute;
+  z-index: -1;
+  right: 30px;
+  top: 175px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 30% 27%,
+    #b7edc5,
+    #4f9471 45%,
+    #1b3528 80%
+  );
+
+  box-shadow: 0 0 95px rgba(100, 210, 140, .16);
+}
+
+
+/* =========================================
+   8. GENERAL SECTIONS
+========================================= */
+
+.section {
+  padding-block: 25px 80px;
+  scroll-margin-top: 35px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.section-label {
+  margin-bottom: 7px;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: -.045em;
+}
+
+.section-aside {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+
+/* =========================================
+   9. BLOG POST CARDS
+========================================= */
+
+.post-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.post-card h3 {
+  margin: 12px 0;
+  font-size: 1.45rem;
+  letter-spacing: -.025em;
+}
+
+.post-card p {
+  max-width: 600px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.post-symbol {
+  align-self: center;
+  color: var(--accent);
+  font-size: 4rem;
+}
+
+
+/* =========================================
+   10. ABOUT SECTION
+========================================= */
+
+.about-panel {
+  padding: 35px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 12px 12px 0;
+}
+
+.about-panel p {
+  max-width: 780px;
+  font-size: 1.18rem;
+}
+
+.about-panel span {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 26px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+
+/* =========================================
+   12. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 680px) {
+
+  .header-inner {
+    min-height: 72px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 490px;
+    padding-block: 95px 85px;
+  }
+
+  .planet {
+    right: -65px;
+    top: 105px;
+    opacity: .35;
+  }
+
+  .orbit-one {
+    right: -290px;
+  }
+
+  .orbit-two {
+    right: -385px;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .post-card {
+    padding: 24px;
+  }
+
+  .post-symbol {
+    display: none;
+  }
+
+  .about-panel {
+    padding: 25px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+}
+
+
+/* =========================================
+   14. BLOG POST LIST
+========================================= */
+
+#posts-container {
+  display: grid;
+  gap: 20px;
+}
+
+.post-card h3 a {
+  transition: color .2s;
+}
+
+.post-card h3 a:hover {
+  color: var(--accent);
+}
+
+.read-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.read-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   15. ARTICLE PAGE
+========================================= */
+
+.article-page {
+  max-width: 800px;
+  min-height: 70vh;
+  padding-block: 70px 120px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 65px;
+  color: var(--muted);
+  font-size: .9rem;
+  transition: color .2s;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.article-header {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-header h1 {
+  margin: 20px 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.15;
+}
+
+.article-description {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.article-body {
+  padding-top: 45px;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.article-body h2 {
+  margin: 45px 0 20px;
+  font-size: 1.65rem;
+}
+
+.article-body p {
+  margin-bottom: 25px;
+  color: var(--text);
+}
+
+
+/* =========================================
+   16. MARKDOWN CONTENT
+========================================= */
+
+.article-body h1 {
+  position: static;
+  max-width: 100%;
+  margin: 0 0 35px;
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.2;
+  letter-spacing: -.05em;
+}
+
+.article-body h2 {
+  margin: 45px 0 20px;
+  font-size: 1.65rem;
+}
+
+.article-body h3 {
+  margin: 30px 0 15px;
+  font-size: 1.3rem;
+}
+
+.article-body p {
+  margin-bottom: 24px;
+}
+
+.article-body strong {
+  color: var(--accent);
+}
+
+.article-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.article-body ul,
+.article-body ol {
+  margin: 20px 0 30px;
+  padding-left: 30px;
+}
+
+.article-body li {
+  margin-bottom: 10px;
+}
+
+.article-body blockquote {
+  margin: 30px 0;
+  padding: 15px 25px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.article-body pre {
+  overflow-x: auto;
+  margin: 30px 0;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #080d0a;
+  line-height: 1.6;
+}
+
+.article-body code {
+  font-family: Consolas, Monaco, monospace;
+  font-size: .9em;
+}
+
+.article-body :not(pre) > code {
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--accent);
+}
+
+.article-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+.article-body hr {
+  margin: 45px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+
+/* =========================================
+   13. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+  }
+
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello, World!",
+    "date": "2026-11-11",
+    "category": "Personal",
+    "description": "Welcome to my little corner of the internet.",
+    "file": "posts/hello-world.md"
+  }
+]
