@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gabriel Space — a personal blog about development, family, and being human (mostly).">
+  <title>Gabriel Space — Personal Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Gabriel Space home">gabriel<span class="logo-dot">.</span>space <span aria-hidden="true">✳</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">☰</button>
+      <nav class="nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>    
+        <a href="#journal">Journal</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/gabriel04araujo" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="status-light" aria-hidden="true"></span> A LITTLE CORNER OF THE UNIVERSE</div>
+      <h1 id="hero-title">Hi, I'm Gabriel<span class="wave">.</span><br>Welcome to my <em>space.</em></h1>
+      <p class="hero-description">Developer in progress. Husband. Father. Human being (probably). This is where I write about code, life, and everything in between.</p>
+      <a class="primary-link" href="#journal">Explore the journal <span aria-hidden="true">↗</span></a>
+      <div class="orbit orbit-one" aria-hidden="true"></div>
+      <div class="orbit orbit-two" aria-hidden="true"></div>
+      <div class="planet" aria-hidden="true"></div>
+    </section>
+
+    
+    <!-- JOURNAL SECTION -->
+
+    <section class="section container" id="journal">
+
+      <div class="section-heading">
+        <div>
+          <p class="section-label">TRANSMISSIONS</p>
+          <h2>Latest from the journal</h2>
+        </div>
+
+        <span class="section-aside">
+          Notes from somewhere in the universe.
+        </span>
+      </div>
+
+      <!-- Posts will appear here -->
+      <div id="posts-container"></div>
+
+    </section>
+
+
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">02 / THE PERSON BEHIND THE SCREEN</p>
+          <h2 id="about-title">A little about me</h2>
+        </div>
+      </div>
+      <div class="about-panel">
+        <p>I've decided to create a blog to share my journey as a developer, as a husband, as a father and as a human being in general. Even tho sometimes i feel like Im not one. 👽</p>
+        <span>— Gabriel</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Gabriel Space</span>
+      <span>Made on Earth. Mostly. <span aria-hidden="true">✳</span></span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
