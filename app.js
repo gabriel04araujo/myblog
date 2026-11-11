@@ -159,11 +159,15 @@ async function renderArticle(posts) {
     return;
   }
 
+  
   const response = await fetch(post.file);
 
   if (!response.ok) {
-    throw new Error("Could not load article Markdown.");
+    throw new Error(
+      `Could not load article Markdown: ${response.url} (HTTP ${response.status})`
+    );
   }
+
 
   const markdown = await response.text();
 
